@@ -52,6 +52,29 @@
                     }
                 }
             }
+        },
+        "/gettimeslot": {
+            "get": {
+                "tags": [
+                    "timings"
+                ],
+                "description": "to get allowed timings",
+                "parameters": [
+                    {
+                        "schema": {
+                            "$ref": "#/definitions/allowedtime"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "timings"
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -69,6 +92,7 @@
                     "type": "string"
                 }
             }
-        }
+        },
+        "allowedtime": {}
     }
 }

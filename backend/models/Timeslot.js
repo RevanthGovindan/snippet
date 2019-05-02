@@ -8,4 +8,4 @@ var Timeslots = new mongoose.Schema({
 });
 
 
-module.exports = mongoose.model('Timeslot', Timeslots);
+module.exports = mongoose.model('timeslot', Timeslots);
