@@ -59,10 +59,29 @@
                     "timings"
                 ],
                 "description": "to get allowed timings",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "timings"
+                    }
+                }
+            }
+        },
+        "/updatetimeslot": {
+            "put": {
+                "tags": [
+                    "update times"
+                ],
+                "description": "to set allowed timings",
                 "parameters": [
                     {
+                        "name": "updatetimeslot",
+                        "description": "to set time by alumni",
+                        "in": "body",
                         "schema": {
-                            "$ref": "#/definitions/allowedtime"
+                            "$ref": "#/definitions/setallowedtime"
                         }
                     }
                 ],
@@ -93,6 +112,19 @@
                 }
             }
         },
-        "allowedtime": {}
+        "allowedtime": {},
+        "setallowedtime": {
+            "required": [
+                "times"
+            ],
+            "properties": {
+                "times": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
     }
 }
