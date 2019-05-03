@@ -6,29 +6,30 @@ var login = require('../controllers/login');
 var getAllowedTimes = require('../controllers/gettimeslot');
 var updateAllowedTimes = require('../controllers/managetimeslots');
 var setSchedule = require('../controllers/timeslot');
+var deleteSchedule = require('../controllers/deleteschedule');
 
 router.post("/login", (request, response) => {
-    login(request,response);
+    login(request, response);
 });
 
 router.get("/gettimeslot", (request, response) => {
-    getAllowedTimes(request,response);
+    getAllowedTimes(request, response);
 });
 
 router.put("/updatetimeslot", (request, response) => {
-    updateAllowedTimes(request,response);
+    updateAllowedTimes(request, response);
 });
 
 
 router.post("/setschedule", (request, response) => {
-    setSchedule(request,response);
+    setSchedule(request, response);
 });
 
-router.delete("/deletetimeslot", (request, response) => {
-
+router.delete("/deleteschedule", (request, response) => {
+    deleteSchedule(request, response);
 });
 
-router.post("/approvetimeslot", (request, response) => {
+router.post("/approveschedule", (request, response) => {
 
 });
 
