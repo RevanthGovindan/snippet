@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var Timeslots = new mongoose.Schema({
     registeredBy : String,
-    date : Date,
+    date : String,
     timeslot : String,
     approved : Boolean
 });

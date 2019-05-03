@@ -5,6 +5,8 @@ var router = express.Router();
 var login = require('../controllers/login');
 var getAllowedTimes = require('../controllers/gettimeslot');
 var updateAllowedTimes = require('../controllers/managetimeslots');
+var setSchedule = require('../controllers/timeslot');
+
 router.post("/login", (request, response) => {
     login(request,response);
 });
@@ -18,8 +20,8 @@ router.put("/updatetimeslot", (request, response) => {
 });
 
 
-router.post("/createtimeslot", (request, response) => {
-    
+router.post("/setschedule", (request, response) => {
+    setSchedule(request,response);
 });
 
 router.delete("/deletetimeslot", (request, response) => {

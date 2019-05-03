@@ -94,6 +94,32 @@
                     }
                 }
             }
+        },
+        "/setschedule": {
+            "post": {
+                "tags": [
+                    "set schedule"
+                ],
+                "description": "to set alumni meet",
+                "parameters": [
+                    {
+                        "name": "setschedule",
+                        "description": "to create schedule meet with alumni",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/setschedule"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "timings"
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -123,6 +149,28 @@
                     "items": {
                         "type": "string"
                     }
+                }
+            }
+        },
+        "setschedule": {
+            "required": [
+                "registeredBy",
+                "date",
+                "timeslot",
+                "approved"
+            ],
+            "properties": {
+                "registeredBy": {
+                    "type": "string"
+                },
+                "date": {
+                    "type": "string"
+                },
+                "timeslot": {
+                    "type": "string"
+                },
+                "approved": {
+                    "type": "boolean"
                 }
             }
         }
