@@ -145,7 +145,7 @@
                 }
             }
         },
-        "/deleteSchedule": {
+        "/deleteSchedule/{id}": {
             "delete": {
                 "tags": [
                     "delete schedule"
@@ -153,12 +153,10 @@
                 "description": "to delete alumni meet",
                 "parameters": [
                     {
-                        "name": "deleteSchedule",
+                        "name": "id",
                         "description": "to delete schedule meet with alumni",
-                        "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/deleteSchedule"
-                        }
+                        "in": "path",
+                        "required": true
                     }
                 ],
                 "produces": [
@@ -247,17 +245,6 @@
                 },
                 "approved": {
                     "type": "boolean"
-                }
-            }
-        },
-        "deleteSchedule": {
-            "required": [
-                "id"
-            ],
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "uniqueItems": true
                 }
             }
         },

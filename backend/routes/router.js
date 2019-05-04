@@ -29,7 +29,7 @@ router.post("/setschedule", (request, response) => {
     setSchedule(request, response);
 });
 
-router.delete("/deleteschedule", (request, response) => {
+router.delete("/deleteschedule/:id", (request, response) => {
     deleteSchedule(request, response);
 });
 

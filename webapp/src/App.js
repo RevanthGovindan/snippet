@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
+import Unauthorized from './router/Unauthorized';
+import Authorized from './router/Authorized';
+import PostLoginPage from './screens/postlogin/PostLoginPage';
+import PreLoginPage from './screens/prelogin/PreLoginPage';
+class App extends React.Component {
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  render() {
+    return (
+      <div className="App">
+        <BrowserRouter>
+          <Switch>
+            <Unauthorized path="/base" component={PreLoginPage} {...this.props}/>
+            <Authorized path="/home" component={PostLoginPage} {...this.props}/>
+            <Redirect to="/base" />
+            {/* <Route path="*" component={PageNotFound} /> */}
+          </Switch>
+        </BrowserRouter>
+      </div>
+    );
+  }
 }
 
 export default App;

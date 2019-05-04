@@ -8,37 +8,34 @@ mongoose.connect('mongodb://localhost:27017/snippet', { useNewUrlParser: true, u
 const addUsers = async () => {
     const users = [
         {
-            name: "student1", password: "student1", permissions: [
-                {
-                    addTimeslot: "Y",
-                    editTimeslot: "Y",
-                    deleteTimeslot: "Y",
-                    slotConfirmation: "N",
-                    admin: "N"
-                }
-            ]
+            name: "student1", password: "student1", permissions:
+            {
+                addTimeslot: "Y",
+                editTimeslot: "Y",
+                deleteTimeslot: "Y",
+                slotConfirmation: "N",
+                admin: "N"
+            }
         },
         {
-            name: "student2", password: "student2", permissions: [
-                {
-                    addTimeslot: "Y",
-                    editTimeslot: "Y",
-                    deleteTimeslot: "Y",
-                    slotConfirmation: "N",
-                    admin: "N"
-                }
-            ]
+            name: "student2", password: "student2", permissions:
+            {
+                addTimeslot: "Y",
+                editTimeslot: "Y",
+                deleteTimeslot: "Y",
+                slotConfirmation: "N",
+                admin: "N"
+            }
         },
         {
-            name: "alumni", password: "alumni", permissions: [
-                {
-                    addTimeslot: "N",
-                    editTimeslot: "N",
-                    deleteTimeslot: "N",
-                    slotConfirmation: "Y",
-                    admin: "Y"
-                }
-            ]
+            name: "alumni", password: "alumni", permissions:
+            {
+                addTimeslot: "N",
+                editTimeslot: "N",
+                deleteTimeslot: "N",
+                slotConfirmation: "Y",
+                admin: "Y"
+            }
         },
     ];
     await Users.deleteMany();
