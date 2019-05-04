@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 const Users = require('./models/User');
 const Allowedtime = require('./models/Allowedtime');
 
-mongoose.connect('mongodb://localhost:27017/snippet', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost:27017/snippet', { useNewUrlParser: true, useFindAndModify: false })
     .then(db => console.log('db connected'))
     .catch(err => console.log(err));
 const addUsers = async () => {

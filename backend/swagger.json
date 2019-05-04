@@ -95,6 +95,30 @@
                 }
             }
         },
+        "/getschedules/{user}": {
+            "get": {
+                "tags": [
+                    "get schedules"
+                ],
+                "description": "to get schedules timings",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "description": "to get schedules",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "get schedules"
+                    }
+                }
+            }
+        },
         "/setschedule": {
             "post": {
                 "tags": [
@@ -117,6 +141,58 @@
                 "responses": {
                     "200": {
                         "description": "timings"
+                    }
+                }
+            }
+        },
+        "/deleteSchedule": {
+            "delete": {
+                "tags": [
+                    "delete schedule"
+                ],
+                "description": "to delete alumni meet",
+                "parameters": [
+                    {
+                        "name": "deleteSchedule",
+                        "description": "to delete schedule meet with alumni",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/deleteSchedule"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "timings"
+                    }
+                }
+            }
+        },
+        "/approveSchedule": {
+            "post": {
+                "tags": [
+                    "approve schedule"
+                ],
+                "description": "to approve alumni meet",
+                "parameters": [
+                    {
+                        "name": "approveSchedule",
+                        "description": "to approve schedule meet with alumni",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/approveSchedule"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "approveSchedule"
                     }
                 }
             }
@@ -171,6 +247,28 @@
                 },
                 "approved": {
                     "type": "boolean"
+                }
+            }
+        },
+        "deleteSchedule": {
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "uniqueItems": true
+                }
+            }
+        },
+        "approveSchedule": {
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "uniqueItems": true
                 }
             }
         }
