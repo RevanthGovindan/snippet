@@ -4,7 +4,7 @@ var Timeslots = new mongoose.Schema({
     registeredBy : String,
     date : String,
     timeslot : String,
-    approved : Boolean
+    approved : false
 });
 
 

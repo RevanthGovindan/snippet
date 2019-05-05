@@ -119,6 +119,30 @@
                 }
             }
         },
+
+        "/getschedulesadmin": {
+            "get": {
+                "tags": [
+                    "get schedules admin"
+                ],
+                "description": "to get schedules timings for admin",
+                "parameters": [
+                    {
+                        "name": "admin",
+                        "description": "to get schedules"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "get schedules"
+                    }
+                }
+            }
+        },
+
         "/setschedule": {
             "post": {
                 "tags": [

@@ -1,13 +1,12 @@
-
-export const postFetch = function (url, data, successCallback, errorCallback) {
+export const postFetch = function(url, data, successCallback, errorCallback) {
     postRequest(url, data).then((response) => {
-        if(successCallback){
+        if (successCallback) {
             successCallback(response);
-        }        
+        }
     }).catch((error) => {
-        if(errorCallback){
+        if (errorCallback) {
             errorCallback(error);
-        }        
+        }
     });
 };
 
@@ -47,7 +46,7 @@ function postRequest(url, data) {
         if (response.status >= 200 && response.status < 300) {
             return response.json();
         } else {
-            var error = new Error("ServiceUnavailable");
+            var error = new Error(response.message);
             throw error
         }
     }).then((body) => {
@@ -60,7 +59,6 @@ function postRequest(url, data) {
 function getRequest(url) {
     return fetch(url, {
         method: 'GET',
-        credentials: 'include',
         headers: {
             'content-type': 'application/json'
         }
@@ -68,7 +66,7 @@ function getRequest(url) {
         if (response.status >= 200 && response.status < 300) {
             return response.json();
         } else {
-            var error = new Error("ServiceUnavailable");
+            var error = new Error(response.message);
             throw error
         }
     }).then((body) => {
@@ -81,7 +79,6 @@ function getRequest(url) {
 function putRequest(url, data) {
     return fetch(url, {
         method: 'PUT',
-        credentials: 'include',
         headers: {
             'content-type': 'application/json'
         },
@@ -90,7 +87,7 @@ function putRequest(url, data) {
         if (response.status >= 200 && response.status < 300) {
             return response.json();
         } else {
-            var error = new Error("ServiceUnavailable");
+            var error = new Error(response.message);
             throw error
         }
     }).then((body) => {
@@ -103,7 +100,6 @@ function putRequest(url, data) {
 function deleteRequest(url) {
     return fetch(url, {
         method: 'DELETE',
-        credentials: 'include',
         headers: {
             'content-type': 'application/json'
         }
@@ -111,7 +107,7 @@ function deleteRequest(url) {
         if (response.status >= 200 && response.status < 300) {
             return response.json();
         } else {
-            var error = new Error("ServiceUnavailable");
+            var error = new Error(response.message);
             throw error
         }
     }).then((body) => {

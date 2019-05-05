@@ -47,9 +47,9 @@ const addUsers = async () => {
 const addTimings = async () => {
     const timeings = {
         times: [
-            "13-14",
-            "16-17",
-            "18-19"
+            "1pm-2pm",
+            "4pm-5pm",
+            "6pm-7pm"
         ]
     };
     await Allowedtime.deleteMany();

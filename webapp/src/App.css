@@ -6,4 +6,27 @@
   text-align: center;
 }
 
+.display-flex-evenly{
+  display: flex;
+  justify-content: space-evenly;
+}
 
+.display-flex-between{
+  display: flex;
+  justify-content: space-between;
+}
+
+.display-flex-around{
+  display: flex;
+  justify-content: space-around;
+}
+
+.display-flex-center { 
+  display:flex;
+  justify-content: center;
+}
+
+.error{
+  height:20px;
+  color: rgb(249, 10, 10);
+}

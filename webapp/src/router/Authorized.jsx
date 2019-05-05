@@ -9,7 +9,7 @@ class Authorized extends React.Component {
         }
     }
 
-    componentDidMount() {
+    componentWillMount(){
         let loginstatus = getItem('loginstatus');
         if (loginstatus) {
             this.setState({ loginStatus: true });
@@ -22,7 +22,7 @@ class Authorized extends React.Component {
             <Route {...rest} render={props => {
                 return this.state.loginStatus
                     ? <Component {...props} />
-                    : <Redirect to="/base/login" />
+                    : <Redirect to="/base"/>
             }} />
         );
     }
