@@ -2,7 +2,7 @@
   "name": "snippet",
   "version": "1.0.0",
   "description": "for interview",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "seed": "node seed.js"
@@ -15,5 +15,8 @@
     "mongoose": "^5.5.5",
     "nodemon": "^1.19.0",
     "swagger-ui-express": "^4.0.2"
+  },
+  "engines": {
+    "node": "10.9.0"
   }
 }
